@@ -1,0 +1,19 @@
+.projects{
+    padding: 2em;
+    background-color: var(--section-bg);
+    margin-top: 6em;
+}
+.projects h1{
+    text-align: center;
+    width: max-content;
+    color: white;
+    margin: auto;
+}
+.projects h1::after{
+    content: '';
+    display: block;
+    width: 70%;
+    margin: 0.3em auto 0 auto;
+    height: 0.1em;
+    background-color: var(--text-underline);
+}

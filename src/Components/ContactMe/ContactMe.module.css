@@ -1,0 +1,96 @@
+.contactMe{
+    width: 90%;
+    max-width: 700px;
+    margin: 6em auto 0 auto;
+}
+.contactMe h1{
+    text-align: center;
+    width: max-content;
+    color: white;
+    margin: auto;
+}
+.contactMe h1::after{
+    content: '';
+    display: block;
+    width: 70%;
+    margin: 0.3em auto 0 auto;
+    height: 0.1em;
+    background-color: var(--text-underline);
+}
+form{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 1.2em;
+    margin: auto;
+    margin-top: 2.4em;
+}
+label{
+    display: flex;
+    flex-direction: column;
+    gap: 0.5em;
+    color: white;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+input, textarea{
+    width: 100%;
+    padding: 0.9em;
+    border-radius: 0.6rem;
+    border: 1px solid var(--contact-me-input-bg);
+    background-color: var(--contact-me-input-bg);
+}
+textarea{
+    height: 300px;
+}
+input::placeholder, textarea::placeholder{
+    color: rgba(255, 255, 255, 0.7);
+    font-weight: 600;
+}
+input:focus, textarea:focus{
+    outline: none;
+}
+.formBlock{
+    display: grid;
+    grid-template-columns: 45% 45%;
+    gap: 10%;
+}
+.formElement{
+    display: flex;
+    flex-direction: column;
+    gap:0.5em;
+}
+.formActions{
+    margin: auto;
+    width: 100%;
+    max-width: 150px;
+}
+.formActions button{
+    cursor: pointer;
+    padding: 0.8em;
+    color: white;
+    font-weight: 800;
+    border-radius: 0.3rem;
+    background-color: var(--text-underline);
+    width: 100%;
+    border: none;
+}
+input.errorField, textarea.errorField{
+    border-color: rgba(202, 79, 79, 0.89);
+}
+.error{
+    color: rgba(207, 79, 79, 0.89);
+    font-size: 0.76rem;
+    font-weight: 600;
+}
+@media screen and (max-width:550px) {
+    .formBlock{
+        grid-template-columns: unset;
+    }
+    form{
+        gap: 2em;
+    }
+}
