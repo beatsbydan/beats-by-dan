@@ -7,6 +7,11 @@
 ul{
   list-style: none;
 }
+a{
+  text-decoration: none;
+  color: black;
+  font-weight: 500;
+}
 
 /* VARIABLES */
 :root{
@@ -22,6 +27,8 @@ ul{
 .flex-row{
   display: flex;
   flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
 }
 .flex-col{
   display: flex;

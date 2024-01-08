@@ -1,0 +1,12 @@
+footer{
+    width: 100%;
+    background-color: rgba(84, 0, 0, 1);
+    padding: 2.5rem 5%;
+    color: white;
+    text-align: center;
+}
+footer div{
+    width: 100%;
+    max-width: 250px;
+    margin: 3em auto 0 auto;
+}

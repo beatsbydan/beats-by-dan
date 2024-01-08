@@ -1,19 +1,19 @@
 import React from 'react'
 import './Navbar.css'
 import logo from '../../Assets/Images/logo.svg'
+import {NavLink} from 'react-router-dom'
 
 const Navbar:React.FC = () => {
     return (
-        <header>
+        <header className="flex-row">
             <img src={logo} alt="logo" />
-            <nav>
-                <ul>
-                    <li>home</li>
-                    <li>about me</li>
-                    <li>contact</li>
-                    <li>portfolio</li>
-                </ul>
+            <nav className='flex-row'>
+                <NavLink to={'/'}>home</NavLink>
+                <NavLink to={'/about'}>about me</NavLink>
+                <NavLink to={'/'}>contact</NavLink>
+                <NavLink to={'/portfolio'}>portfolio</NavLink>
             </nav>
+            {}
         </header>
     )
 }

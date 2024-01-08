@@ -43,6 +43,7 @@
     ]
   },
   "devDependencies": {
-    "@types/loadable__component": "^5.13.8"
+    "@types/loadable__component": "^5.13.8",
+    "react-icons": "^4.12.0"
   }
 }
