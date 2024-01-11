@@ -12,7 +12,9 @@ a{
   color: black;
   font-weight: 500;
 }
-
+.App{
+  position: relative;
+}
 /* VARIABLES */
 :root{
   /* FONT-FAMILIES */
@@ -21,6 +23,7 @@ a{
   --ff-poppins: 'Poppins', sans-serif;
 
   /* FONT SIZES */
+  --fs-p: 0.9rem;
 }
 
 /* UTILITY CLASSES */
@@ -33,4 +36,11 @@ a{
 .flex-col{
   display: flex;
   flex-direction: column;
+}
+
+
+/* APP */
+main{
+  margin-top: 7rem;
+  padding: 0 5% 2rem 5%;
 }

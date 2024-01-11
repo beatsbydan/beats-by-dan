@@ -12,16 +12,20 @@ const Navbar:React.FC = () => {
     }
 
     return (
-        <header className="flex-row">
+        <header className="flex-row navbar">
             <img src={logo} alt="logo" />
-            <nav className='flex-row'>
-                <NavLink to={'/'}>home</NavLink>
-                <NavLink to={'/about'}>about me</NavLink>
-                <NavLink to={'/'}>contact</NavLink>
-                <NavLink to={'/portfolio'}>portfolio</NavLink>
+            <nav className={isOpen? 'flex-row open' : 'flex-row'}>
+                <NavLink to={'/'}>Home</NavLink>
+                <NavLink to={'/about'}>About me</NavLink>
+                <NavLink to={'/'}>Contact</NavLink>
+                <NavLink to={'/portfolio'}>Portfolio</NavLink>
             </nav>
             <div className="navControls">
-                {!isOpen ? <RiCloseLine color='white' size={30}/> : <RiMenu3Fill color='black' size={27}/>}
+                {isOpen ? 
+                    <RiCloseLine onClick={handleOpen} color='white' size={30}/> 
+                    : 
+                    <RiMenu3Fill onClick={handleOpen} color='black' size={27}/>
+                }
             </div>
         </header>
     )
