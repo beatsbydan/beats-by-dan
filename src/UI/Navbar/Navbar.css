@@ -4,9 +4,37 @@ header{
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.181);
 }
 header img{
-    width: 60px;
+    width: 45px;
 }
 header nav{
     width: 100%;
-    max-width: 400px;
+    max-width: 350px;
+}
+.navControls{
+    display: none;
+}
+@media screen and (max-width: 700px){
+    header nav.flex-row{
+        width: 90%;
+        max-width: 250px;
+        background-color: rgba(30, 8, 8, 0.774);
+        position: fixed;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 2rem;
+        transform: blur(5%);
+    }
+    header nav a {
+        color: white;
+    }
+    .navControls{
+        display: contents;
+    }
+    .navControls svg{
+        z-index: 1;
+    }
 }
