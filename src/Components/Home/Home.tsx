@@ -1,5 +1,6 @@
 import React from 'react'
 import './Home.css'
+import Contact from './Contact/Contact'
 
 const Home:React.FC = () => {
     return (
@@ -13,6 +14,7 @@ const Home:React.FC = () => {
                 <div className="experience--details"></div>
                 <div className="experience--details"></div>
             </div>
+            <Contact/>
         </div>
     )
 }
