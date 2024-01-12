@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, {useState, useEffect} from 'react'
 import './Navbar.css'
 import logo from '../../Assets/Images/logo.svg'
 import {NavLink} from 'react-router-dom'
@@ -11,8 +11,27 @@ const Navbar:React.FC = () => {
         setIsOpen(!isOpen)
     }
 
+    const [prevScrollPos, setPrevScrollPos] = useState(0);
+    const [visible, setVisible] = useState(true);
+
+    useEffect(() => {
+        const handleScroll = () => {
+            const currentScrollPos = window.scrollY;
+
+            setVisible(prevScrollPos > currentScrollPos || currentScrollPos < 10);
+
+            setPrevScrollPos(currentScrollPos);
+        };
+
+        window.addEventListener('scroll', handleScroll);
+
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+        };
+    }, [prevScrollPos]);
+
     return (
-        <header className="flex-row navbar">
+        <header className="flex-row navbar" style={{ transform: visible ? 'translateY(0)' : 'translateY(-100%)' }}>
             <img src={logo} alt="logo" />
             <nav className={isOpen? 'flex-row open' : 'flex-row'}>
                 <NavLink to={'/'}>Home</NavLink>

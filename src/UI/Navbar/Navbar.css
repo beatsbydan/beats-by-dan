@@ -55,3 +55,10 @@ header nav a::after{
         cursor: pointer;
     }
 }
+
+@keyframes showNav {
+    
+}
+@keyframes hideNav {
+    
+}
