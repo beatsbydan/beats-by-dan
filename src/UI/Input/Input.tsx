@@ -6,20 +6,37 @@ type inputType = {
     value: string,
     type: string,
     error: boolean,
-    handleChange: (e: React.ChangeEvent<HTMLInputElement>) => void,
+    handleTextAreaChange: (event: React.ChangeEvent<HTMLTextAreaElement>) => void,
+    handleInputChange: (event: React.ChangeEvent<HTMLInputElement>) => void,
     placeholder: string
 }
 
 const Input:React.FC<inputType> = (props) => {
     return (
-        <input
-            className={props.error ? 'errorField' : ''}
-            title={props.name}
-            name={props.name}
-            value={props.value}
-            onChange={props.handleChange}
-            placeholder={props.placeholder}
-        />
+        <>
+            {
+                props.type === "message" 
+                ? 
+                <textarea
+                    className={props.error ? 'errorField' : ''}
+                    title={props.name}
+                    name={props.name}
+                    value={props.value}
+                    onChange={props.handleTextAreaChange}
+                    placeholder={props.placeholder}
+                />
+                :
+                <input
+                    className={props.error ? 'errorField' : ''}
+                    title={props.name}
+                    name={props.name}
+                    value={props.value}
+                    onChange={props.handleInputChange}
+                    placeholder={props.placeholder}
+                />
+            }
+        </>
+        
     )
 }
 

@@ -1,0 +1,30 @@
+.contact{
+    width: 100%;
+    max-width: 1200px;
+    margin: 7em auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+}
+.contact h1{
+    font-family: var(--ff-elsie);
+    font-size: 3rem;
+}
+.contactLeft{
+    width: 100%;
+}
+.contactLeft form{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+.contactRight{
+    width: 100%;
+    max-width: 500px;
+}
+.contactRight img{
+    width: 100%;
+}

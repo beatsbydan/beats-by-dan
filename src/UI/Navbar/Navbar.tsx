@@ -31,17 +31,17 @@ const Navbar:React.FC = () => {
     }, [prevScrollPos]);
 
     return (
-        <header className="flex-row navbar" style={{ transform: visible ? 'translateY(0)' : 'translateY(-100%)' }}>
+        <header className={ !visible ? "flex-row navbar scrolledDown" : "flex-row navbar scrolledUp" }>
             <img src={logo} alt="logo" />
-            <nav className={isOpen? 'flex-row open' : 'flex-row'}>
-                <NavLink to={'/'}>Home</NavLink>
-                <NavLink to={'/about'}>About me</NavLink>
-                <NavLink to={'/'}>Contact</NavLink>
-                <NavLink to={'/portfolio'}>Portfolio</NavLink>
+            <nav className={isOpen? 'flex-row open' : 'flex-row closed'}>
+                <NavLink className={isOpen ? 'viewLinks' : 'hideLinks'} onClick={handleOpen} to={'/'}>Home</NavLink>
+                <NavLink className={isOpen ? 'viewLinks' : 'hideLinks'} onClick={handleOpen} to={'/about'}>About me</NavLink>
+                <NavLink className={isOpen ? 'viewLinks' : 'hideLinks'} onClick={handleOpen} to={'#contact'}>Contact</NavLink>
+                <NavLink className={isOpen ? 'viewLinks' : 'hideLinks'} onClick={handleOpen} to={'/portfolio'}>Portfolio</NavLink>
             </nav>
             <div className="navControls">
                 {isOpen ? 
-                    <RiCloseLine onClick={handleOpen} color='white' size={30}/> 
+                    <RiCloseLine onClick={handleOpen} color='white' size={40}/> 
                     : 
                     <RiMenu3Fill onClick={handleOpen} color='black' size={27}/>
                 }
