@@ -28,3 +28,11 @@
 .contactRight img{
     width: 100%;
 }
+@media screen and (max-width:700px) {
+    .contactRight{
+        width: 0;
+    }
+    .contact{
+        gap: unset;
+    }
+}
