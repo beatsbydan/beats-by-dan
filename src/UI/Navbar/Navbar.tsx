@@ -6,11 +6,6 @@ import { RiMenu3Fill, RiCloseLine } from "react-icons/ri";
 
 const Navbar:React.FC = () => {
     const [isOpen, setIsOpen] = useState<boolean>(false)
-    
-    const handleOpen = () => {
-        setIsOpen(!isOpen)
-    }
-
     const [prevScrollPos, setPrevScrollPos] = useState(0);
     const [visible, setVisible] = useState(true);
 
@@ -22,22 +17,28 @@ const Navbar:React.FC = () => {
 
             setPrevScrollPos(currentScrollPos);
         };
-
+        if(!visible){
+            setIsOpen(false)
+        }
         window.addEventListener('scroll', handleScroll);
 
         return () => {
             window.removeEventListener('scroll', handleScroll);
         };
-    }, [prevScrollPos]);
+    }, [prevScrollPos, visible]);
+
+    const handleOpen = () => {
+        setIsOpen(!isOpen)
+    }
 
     return (
         <header className={ !visible ? "flex-row navbar scrolledDown" : "flex-row navbar scrolledUp" }>
             <img src={logo} alt="logo" />
-            <nav className={isOpen? 'flex-row open' : 'flex-row closed'}>
-                <NavLink className={isOpen ? 'viewLinks' : 'hideLinks'} onClick={handleOpen} to={'/'}>Home</NavLink>
-                <NavLink className={isOpen ? 'viewLinks' : 'hideLinks'} onClick={handleOpen} to={'/about'}>About me</NavLink>
-                <NavLink className={isOpen ? 'viewLinks' : 'hideLinks'} onClick={handleOpen} to={'#contact'}>Contact</NavLink>
-                <NavLink className={isOpen ? 'viewLinks' : 'hideLinks'} onClick={handleOpen} to={'/portfolio'}>Portfolio</NavLink>
+            <nav className={isOpen && visible? 'flex-row open' : 'flex-row closed'}>
+                <NavLink onClick={handleOpen} to={'/'}>Home</NavLink>
+                <NavLink onClick={handleOpen} to={'/about'}>About me</NavLink>
+                <NavLink onClick={handleOpen} to={'#contact'}>Contact</NavLink>
+                <NavLink onClick={handleOpen} to={'/portfolio'}>Portfolio</NavLink>
             </nav>
             <div className="navControls">
                 {isOpen ? 
